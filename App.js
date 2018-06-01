@@ -50,9 +50,7 @@ export default class App extends React.Component {
   renderCard(item) {
     return (
       <Card title={item.text} image={{ uri: item.uri }} key={item.id}>
-        <Text style={{ marginBottom: 20 }}>
-          I can customize the card further
-        </Text>
+        <Text style={{ marginBottom: 20 }}>Hey guys techrax here</Text>
         <Button
           icon={{ name: "code" }}
           backgroundColor="#03A9F4"
@@ -62,10 +60,23 @@ export default class App extends React.Component {
     );
   }
 
+  renderNoMoreCards() {
+    return (
+      <Card title="All done!">
+        <Text style={{ marginTop: 10 }}>hhhhhhhhhhhhhhhhhhhhh</Text>
+        <Button backgroundColor="#075FAA" title="HHHHHHHH" />
+      </Card>
+    );
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Deck data={DATA} renderCard={this.renderCard} />
+        <Deck
+          data={DATA}
+          renderCard={this.renderCard}
+          renderNoMoreCards={this.renderNoMoreCards}
+        />
       </View>
     );
   }
